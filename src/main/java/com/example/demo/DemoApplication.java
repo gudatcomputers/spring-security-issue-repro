@@ -20,12 +20,12 @@ public class DemoApplication {
         /*
         This causes the event of each type
          */
-        httpSecurity.authorizeHttpRequests(c -> c.anyRequest().permitAll());
+//        httpSecurity.authorizeHttpRequests(c -> c.anyRequest().permitAll());
 
         /*
         This generates 2 AuthorizationDeniedEvent
          */
-        //        httpSecurity.authorizeHttpRequests(c -> c.anyRequest().hasRole("admin"));
+        httpSecurity.authorizeHttpRequests(c -> c.anyRequest().hasRole("admin"));
         return httpSecurity.build();
     }
 }
